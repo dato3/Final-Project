@@ -28,22 +28,31 @@
                 <div class="sidebar">
                     <nav class="navbar">
                         <li><a href="main.do">HOME</a></li>
-                        <li><a href="blog.do">BLOG</a></li>
-                        <li><a href="about.html">ABOUT</a></li>
-                        <li><a href="contact.html">CONTACT</a></li>
+                        <li><a href="blog.do">NEWS</a></li>
+                        <li><a href="about.do">ABOUT</a></li>
+                        <li><a href="contact.do">CONTACT</a></li>
                     </nav>
                     <div class="searchBasket">
-                        <div class="search">
-                            <input type="text" class="search" placeholder="I'm looking for...">
-                            <a class="btn-search" href="#">Search</a>
-                        </div>
-                        <a href="#" class="basket"><img src="assets/css/img/shopping-cart.png" alt=""> <p> $0.00</p></a>
+                        <form class="search" action="search.do" method="POST">
+	                        <input type="hidden" name="currentPage" value="1">
+	                        <input type="text" class="search" name="inputText" placeholder="I'm looking for...">
+                        	<button type="submit" class="btn-search">Search</button>
+                        </form>
+                        <c:if test="${totalPrice == null}">
+	                        <a href="basket.do" class="basket"><img src="assets/css/img/shopping-cart.png" alt=""> <p>0 KZT</p></a>                        	
+                        </c:if>
+                        <c:if test="${totalPrice != null}">
+                       		<a href="basket.do" class="basket"><img src="assets/css/img/shopping-cart.png" alt=""> <p>${totalPrice} KZT</p></a>                        	
+                        </c:if>
                     </div>
                 </div>
             </div>
             <div class="slider">
                 <h1>healthy life recipe</h1>
-                <a href="#">Shop now</a>
+                <form action="shop.do" method="POST">
+                	<input type="hidden" name="currentPage" value="1">
+                	<button type="submit" class="innerAtag">Shop now</button>
+                </form>
             </div>
         </div>
         <div class="content">
@@ -51,173 +60,50 @@
                 <p>Recent products</p>
             </div>
             <div class="recentProducts">
-                <a href="#" class="product">
-                    <div class="imgProduct">
-                        <img src="assets/css/img/product/a1-300x300.jpg" alt="">
-                    </div>
-                    <div class="textProduct">
-                        <p class="nameProduct">Cream Colored</p>
-                        <p class="costProduct">KZT 4,000</p>
-                    </div>
-                </a>
-                <a href="#" class="product">
-                    <div class="imgProduct">
-                        <img src="assets/css/img/product/a1-300x300.jpg" alt="">
-                    </div>
-                    <div class="textProduct">
-                        <p class="nameProduct">Cream Colored</p>
-                        <p class="costProduct">KZT 4,000</p>
-                    </div>
-                </a>
-                <a href="#" class="product">
-                    <div class="imgProduct">
-                        <img src="assets/css/img/product/a1-300x300.jpg" alt="">
-                    </div>
-                    <div class="textProduct">
-                        <p class="nameProduct">Cream Colored</p>
-                        <p class="costProduct">KZT 4,000</p>
-                    </div>
-                </a>
-                <a href="#" class="product">
-                    <div class="imgProduct">
-                        <img src="assets/css/img/product/a1-300x300.jpg" alt="">
-                    </div>
-                    <div class="textProduct">
-                        <p class="nameProduct">Cream Colored</p>
-                        <p class="costProduct">KZT 4,000</p>
-                    </div>
-                </a>
-                <a href="#" class="product">
-                    <div class="imgProduct">
-                        <img src="assets/css/img/product/a1-300x300.jpg" alt="">
-                    </div>
-                    <div class="textProduct">
-                        <p class="nameProduct">Cream Colored</p>
-                        <p class="costProduct">KZT 4,000</p>
-                    </div>
-                </a>
-                <a href="#" class="product">
-                    <div class="imgProduct">
-                        <img src="assets/css/img/product/a1-300x300.jpg" alt="">
-                    </div>
-                    <div class="textProduct">
-                        <p class="nameProduct">Cream Colored</p>
-                        <p class="costProduct">KZT 4,000</p>
-                    </div>
-                </a>
-                <a href="#" class="product">
-                    <div class="imgProduct">
-                        <img src="assets/css/img/product/a1-300x300.jpg" alt="">
-                    </div>
-                    <div class="textProduct">
-                        <p class="nameProduct">Cream Colored</p>
-                        <p class="costProduct">KZT 4,000</p>
-                    </div>
-                </a>
-                <a href="#" class="product">
-                    <div class="imgProduct">
-                        <img src="assets/css/img/product/a1-300x300.jpg" alt="">
-                    </div>
-                    <div class="textProduct">
-                        <p class="nameProduct">Cream Colored</p>
-                        <p class="costProduct">KZT 4,000</p>
-                    </div>
-                </a>
-                <a href="#" class="product">
-                    <div class="imgProduct">
-                        <img src="assets/css/img/product/a1-300x300.jpg" alt="">
-                    </div>
-                    <div class="textProduct">
-                        <p class="nameProduct">Cream Colored</p>
-                        <p class="costProduct">KZT 4,000</p>
-                    </div>
-                </a>
-                <a href="#" class="product">
-                    <div class="imgProduct">
-                        <img src="assets/css/img/product/a1-300x300.jpg" alt="">
-                    </div>
-                    <div class="textProduct">
-                        <p class="nameProduct">Cream Colored</p>
-                        <p class="costProduct">KZT 4,000</p>
-                    </div>
-                </a>
+            	<c:forEach var="medicine" items="${recentMedicines}">
+            		<a href="medicine.do?medicineName=${medicine.medicineName}" class="product">
+            			<div class="imgProduct">
+	                        <img src="${medicine.image}" alt="">
+	                    </div>
+	                    <div class="textProduct">
+	                        <p class="nameProduct">${medicine.medicineName}</p>
+	                        <p class="costProduct">${medicine.price} KZT</p>
+	                    </div>
+            		</a>
+            	</c:forEach>
             </div>
             <div class="productsHeader">
                 <p>Featured products</p>
             </div>
             <div class="recentProducts">
-                <a href="#" class="product">
-                    <div class="imgProduct">
-                        <img src="assets/css/img/product/a1-300x300.jpg" alt="">
-                    </div>
-                    <div class="textProduct">
-                        <p class="nameProduct">Cream Colored</p>
-                        <p class="costProduct">KZT 4,000</p>
-                    </div>
-                </a>
-                <a href="#" class="product">
-                    <div class="imgProduct">
-                        <img src="assets/css/img/product/a1-300x300.jpg" alt="">
-                    </div>
-                    <div class="textProduct">
-                        <p class="nameProduct">Cream Colored</p>
-                        <p class="costProduct">KZT 4,000</p>
-                    </div>
-                </a>
-                <a href="#" class="product">
-                    <div class="imgProduct">
-                        <img src="assets/css/css/img/product/a1-300x300.jpg" alt="">
-                    </div>
-                    <div class="textProduct">
-                        <p class="nameProduct">Cream Colored</p>
-                        <p class="costProduct">KZT 4,000</p>
-                    </div>
-                </a>
-                <a href="#" class="product">
-                    <div class="imgProduct">
-                        <img src="assets/css/img/product/a1-300x300.jpg" alt="">
-                    </div>
-                    <div class="textProduct">
-                        <p class="nameProduct">Cream Colored</p>
-                        <p class="costProduct">KZT 4,000</p>
-                    </div>
-                </a>
-                <a href="#" class="product">
-                    <div class="imgProduct">
-                        <img src="assets/css/img/product/a1-300x300.jpg" alt="">
-                    </div>
-                    <div class="textProduct">
-                        <p class="nameProduct">Cream Colored</p>
-                        <p class="costProduct">KZT 4,000</p>
-                    </div>
-                </a>
+            	<c:forEach var="medicine" items="${featuredMedicines}">
+            		<a href="medicine.do?medicineName=${medicine.medicineName}" class="product">
+	                    <div class="imgProduct">
+	                        <img src="${medicine.image}" alt="">
+	                    </div>
+	                    <div class="textProduct">
+	                        <p class="nameProduct">${medicine.medicineName}</p>
+	                        <p class="costProduct">${medicine.price} KZT</p>
+	                    </div>
+	                </a>
+            	</c:forEach>
             </div>
             <div class="imgContact">
                 <img src="assets/css/img/Screenshot from 2020-12-02 13-15-30.png" alt="">
             </div>
             <div class="newsMore">
                 <div class="newsHeader">
-                    <p>Featured products</p>
+                    <p>News</p>
                 </div>
                 <div class="newsBlog">
-                    <div class="newsRead">
-                        <div class="newsText">
-                            <p>PROIN GRAVIDA NIBH VEL VELIT AUCTOR AIQUET AENEANSOUDIN</p>
-                            <a href="#"><p>Read more</p></a>
-                        </div>
-                    </div>
-                    <div class="newsRead">
-                        <div class="newsText">
-                            <p>LOREM QUIS BIBENDUM AUCTOR, NISI ELTCOUAT IPSUM, NEC SAGITTIS SEM NIBH ID ELIT</p>
-                            <a href="#"><p>Read more</p></a>
-                        </div>
-                    </div>
-                    <div class="newsRead">
-                        <div class="newsText">
-                            <p>DUIS SED ODIO SIT AMET NIBH VULPUTATE URSUS A SIT AMET MAURIS MORBI</p>
-                            <a href="#"><p>Read more</p></a>
-                        </div>
-                    </div>
+                	<c:forEach var="news" items="${news}">
+                		<div class="newsRead">
+	                        <div class="newsText">
+	                            <p>${news.header}</p>
+	                            <a href="blog.do"><p>Read more</p></a>
+	                        </div>
+	                    </div>
+                	</c:forEach>
                 </div>
             </div>
         </div>
@@ -226,13 +112,13 @@
                 <h2>Navigation</h2>
                 <nav>
                     <li><a href="main.do">HOME</a></li>
-                    <li><a href="blog.do">BLOG</a></li>
-                    <li><a href="#">ABOUT</a></li>
-                    <li><a href="#">CONTACT</a></li>
+                    <li><a href="blog.do">NEWS</a></li>
+                    <li><a href="about.do">ABOUT</a></li>
+                    <li><a href="contact.do">CONTACT</a></li>
                 </nav>
             </div>
             <div class="footerContact">
-                <h2>CONTAC INFO</h2>
+                <h2>CONTACT INFO</h2>
                 <p>Add: No 1104 Super Sky Tower, Los Angeles</p>
                 <p>Openning time: 8am to 10pm from Monday to Saturday</p>
                 <p>+7(000)000 00 00</p>

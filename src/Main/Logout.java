@@ -3,7 +3,9 @@ package Main;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import ProjectDAO.CartDAO;
 import ProjectDAO.Model;
+import ProjectDAO.MyDAOException;
 import ProjectDAO.UserDAO;
 import FormBeans.LoginForm;
 
@@ -13,9 +15,11 @@ import FormBeans.LoginForm;
  */
 public class Logout extends Action {
 	private UserDAO userDAO;
+	private CartDAO cartDAO;
 	
 	public Logout(Model model) {
 		userDAO = model.getUserDAO();
+		cartDAO = model.getCartDAO();
 	}
 
     public String getName() {
@@ -25,6 +29,12 @@ public class Logout extends Action {
     public String performPost(HttpServletRequest request) {
         HttpSession session = request.getSession();
         session.setAttribute("user", null);
+        session.setAttribute("totalPrice", null);
+        try {
+			cartDAO.deleteTable();
+		} catch (MyDAOException e) {
+			e.printStackTrace();
+		}
 //        try {
 ////            session.setAttribute("users", userDAO.getUsers());
 //        } catch(RollbackException e) {
@@ -33,6 +43,6 @@ public class Logout extends Action {
 //        }
 
         request.setAttribute("form", new LoginForm());
-        return "login.jsp";
+        return "login.do";
     }
 }

@@ -24,6 +24,15 @@ public class Controller extends HttpServlet {
         Action.add(new Logout(model));
         Action.add(new Main(model));
         Action.add(new Blog(model));
+        Action.add(new About(model));
+        Action.add(new Contact(model));
+        Action.add(new Basket(model));
+        Action.add(new Shop(model));
+        Action.add(new Search(model));
+        Action.add(new Medicine(model));
+        Action.add(new AddToCart(model));
+        Action.add(new Remove(model));
+        Action.add(new Buy(model));
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -56,6 +65,16 @@ public class Controller extends HttpServlet {
         	return Action.perform("main.do", request);
         } else if (action.equals("blog.do")) {
         	return Action.perform("blog.do", request);
+        } else if (action.equals("about.do")) {
+        	return Action.perform("about.do", request);
+        } else if (action.equals("contact.do")) {
+        	return Action.perform("contact.do", request);
+        } else if (action.equals("shop.do")) {
+        	return Action.perform("shop.do", request);
+        } else if (action.equals("search.do")) {
+        	return Action.perform("search.do", request);
+        } else if (action.equals("medicine.do")) {
+        	return Action.perform("medicine.do", request);
         }
         
         // If the user hasn't logged in, login is the only option

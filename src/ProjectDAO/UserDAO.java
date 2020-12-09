@@ -97,8 +97,8 @@ public class UserDAO {
                 user.setUserName(rs.getString("userName"));
                 user.setFirstName(rs.getString("firstName"));
                 user.setLastName(rs.getString("lastName"));
+                user.setLastName(rs.getString("lastName"));
                 user.setPassword(rs.getString("password"));
-                
             }
 
             rs.close();
@@ -120,14 +120,14 @@ public class UserDAO {
         Connection con = null;
         try {
             con = getConnection();
-            DatabaseMetaData metaData = con.getMetaData();
-            ResultSet rs = metaData.getTables(null, null, tableName, null);
-
+            PreparedStatement pstmt = con.prepareStatement("SELECT * FROM "
+                    + tableName);
+            ResultSet rs = pstmt.executeQuery();
             boolean answer = rs.next();
             rs.close();
             releaseConnection(con);
 
-            return !answer;
+            return answer;
 
         } catch (SQLException e) {
             try {

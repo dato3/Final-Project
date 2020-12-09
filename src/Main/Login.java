@@ -4,6 +4,7 @@ import javax.servlet.http.HttpSession;
 
 import org.formbeanfactory.FormBeanFactory;
 
+import ProjectDAO.CartDAO;
 import ProjectDAO.Model;
 import ProjectDAO.MyDAOException;
 import ProjectDAO.UserDAO;
@@ -12,11 +13,12 @@ import FormBeans.LoginForm;
 
 public class Login extends Action {
 	private FormBeanFactory<LoginForm> formBeanFactory = new FormBeanFactory<>(LoginForm.class);
-
+	private CartDAO cartDAO;
     private UserDAO userDAO;
     
     public Login(Model model) {
     	userDAO = model.getUserDAO();
+    	cartDAO = model.getCartDAO();
     }
     
     public String getName() {
@@ -62,6 +64,7 @@ public class Login extends Action {
             }
             // Attach (this copy of) the user bean to the session
             session.setAttribute("user", user);
+            session.setAttribute("cartData", cartDAO.read(user.getUserName()));
 
             // If redirectTo is null, redirect to the "todolist" action
             return "main.do";
