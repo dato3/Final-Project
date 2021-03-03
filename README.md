@@ -7,7 +7,7 @@ Project Name : E-Pharmacy
 
 ## Phase 2
 
-Project Description :
+Project Description(This project is the continuation of what we did in the Database 2 course) :
 
 As a result of the global pandemic in the Republic of Kazakhstan, everything has switched to remote control, we have identified that some areas are still not ready for such rapid changes in society. That’s the main reason why we decided to do something that will help in this difficult situation. As we know, in Kazakhstan we had a quarantine mode for a few months and we still have a quarantine mode in some regions but not as strict as it was a few months ago. And that‘s why people simply started to order the delivery for food, groceries and etc. But we didn’t have an option to order medicine. And even buying medicine was a catastrophic problem, because it was really hard to even find it. We had a shortage of medicine in our country. And that’s why a lot of people died. So in this project, we tried to ease that problem so that people in our country could easily buy or order medicine.
 
