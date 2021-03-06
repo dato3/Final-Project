@@ -1,7 +1,7 @@
 # Final-Project(CSS 348 – ADVANCED DATABASE MANAGEMENT SYSTEMS)
 Team : PharmaDAD
 
-Team Members : Tokmukhanbet Daulet, Zhomartuly Almas , Dauren Khametov
+Team Members(with github nicknames) : Tokmukhanbet Daulet(dato3), Zhomartuly Almas(ZhomartulyAlmas) , Dauren Khametov
 
 Project Name : E-Pharmacy
 
@@ -56,3 +56,23 @@ Answers/Functions :
 * By clicking on the medicine, he/she can see the detailed info about the medicine.
 * We added a search engine, which searches medicine according to their names. Search is not case sensitive.
 * There is a SHOP NOW button right in the center, by clicking it client can see all the available medicines.
+
+## Phase 4
+
+In the 4th phase of our final project we created an ER diagram and created tables accordingly, also in this phase we inserted our dataset.
+
+Few words about why and how we created our ER diagram to make things clear. We don't have a lot of tables, only a few and the relation between them can be a little bit confusing. 
+
+**users - cart_table** : The **users** table is the main table where we are going to store some needed data about the users. And each time the user is logged in the basket or cart would be assigned to the user. **cart_table** is the temporary table that is going to be used by a particular user and when the user will buy some medicines it will be updated. And if the user will log out then the table is going to be deleted. So that's why there is a concrete mandatory one-to-one relationship. 
+
+**users - news** : **news** table is going to be used in order to show some important and interesting news worldwide. And the relationship there is created accordingly that one or many users can read many news. 
+
+**users - buy_log** : **buy_log** is the table that is going to record the purchased medicines. And in one log table, there can be one or many users recorded. 
+
+**cart_table - medicines** : **medicines** is the main table where we are going to store our medicines. And it is obvious that in one cart_table there can be one or many medicines.
+
+**medicines - recent_medicines** : Now we know what we store in the medicines table, and the attributes of the medicines table are almost the same as in **recent_medicines**. The function of keeping track of recently bought medicines is going to be added to our project and this table is going to be used. It will just sort out the date_bought attribute and return the result. The relationship here is that one or many medicines can be in the list of recently bought medicines.
+
+**medicines - featured_medicines** : It is a similar thing here, we just add a new attribute called number_bought and sort using that attribute to get a list of medicines that are sold most. The relation is pretty similar except that there can not be only one medicine, there should be many medicines in the list.
+
+Also SQL queries of how we created our tables and inserted our dataset is attached in the repository.
