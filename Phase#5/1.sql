@@ -1,0 +1,2 @@
+--How does a client know that they have successfully ordered a medicine?
+--No queries, because it is based on a email sender using Java library called JavaMAIL.
