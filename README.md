@@ -76,3 +76,7 @@ Few words about why and how we created our ER diagram to make things clear. We d
 **medicines - featured_medicines** : It is a similar thing here, we just add a new attribute called number_bought and sort using that attribute to get a list of medicines that are sold most. The relation is pretty similar except that there can not be only one medicine, there should be many medicines in the list.
 
 Also SQL queries of how we created our tables and inserted our dataset is attached in the repository.
+
+## Phase 5
+
+Actually, we made those 15 questions little bit not relevant to this phase and it was a little bit complicated to correctly associate the queries with the questions. But we tried to make it as clear as possible. All 15 query files are located in the **Phase#5** folder.
