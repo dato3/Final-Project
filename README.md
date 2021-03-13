@@ -79,4 +79,4 @@ Also SQL queries of how we created our tables and inserted our dataset is attach
 
 ## Phase 5
 
-Actually, we made those 15 questions little bit not relevant to this phase and it was a little bit complicated to correctly associate the queries with the questions. But we tried to make it as clear as possible. All 15 query files are located in the **Phase#5** folder.
+Actually, we made those 15 questions little bit not relevant to this phase and it was a little bit complicated to correctly associate the queries with the questions. But we tried to make it as clear as possible. All 15 query files are located in the **Phase#5** folder. All queries are made by all 3 of us.
