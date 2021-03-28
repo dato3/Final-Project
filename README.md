@@ -80,3 +80,23 @@ Also SQL queries of how we created our tables and inserted our dataset is attach
 ## Phase 5
 
 Actually, we made those 15 questions little bit not relevant to this phase and it was a little bit complicated to correctly associate the queries with the questions. But we tried to make it as clear as possible. All 15 query files are located in the **Phase#5** folder. All queries are made by all 3 of us.
+
+## Phase 6
+
+In this phase our project needs to be completely implemented, optimized and tested. But it is not actually fully implemented. There are few things to add. But for now it is working well and it is tested for many actions and etc. We optimized our queries so that they will work as fast as possible, but because of Tomcat server and Email Sender after the purchase, it is working little bit slow.
+
+* Build an user-interface (web, desktop or mobile application). You may choose any programming language you feel comfortable with.
+
+In the DB 2 course, our interface was terrible to say the least(Because UI was not that important). But we redesigned it and made a very good looking and simple UI for user. You can check the screenshots of UI in the Phase#6/UI folder. We created a website using simple HTML, CSS, JS and nothing more and the Backend was implemented using Java(EE version) and the Tomcat server. 
+
+* Establish a connection with the created database. You may use JDBC libraries for the connection.
+
+Establishing a connection with the database in the JavaEE is very easy using JDBC library. We are using Oracle as our DB. Screenshots of how we establish a connection is in the Phase#6/DBConnection folder. In short, connection is established using JDBC Driver name in out case it is **oracle.jdbc.driver.OracleDriver** and the JDBC URL which is **jdbc:oracle:thin:@//localhost:1521/orcl**, because currently I am using Oracle on my Vitual Machine.
+
+* Implement you project functions that will trigger corresponding SQL queries to retrieve the necessary data. The project functions have to be interactive, i.e. they have to allow the user to select a function from a menu and provide input arguments whenever required.
+
+We have not only SQL queries, we also have a Oracle procedures and triggers. Which are very useful in optimizing and making your queries easy. As you saw in the UI all the Recent Medicines, Featured Medicines are retrieved from our DB, also the news section is retrieved from DB. Featured Medicines and Recent Medicines are retrived whenever the page is reloaded. And the News are retrieved whever the News section is clicked. We also implemented a search system which will search the particular medicines(Screenshot is also in the UI folder). And all those queries, procedures, triggers are working very clear and fast. All of them are retrieving necessary information for the user whenever needed. I am not sure should we submit all of our queries or not, because it is not clear, but if we should please contact us)
+
+* Display (or vizualize) the retrieved data to the users (or clients). The teams are welcome to create, extract and report some statistical information based on the project data (bonus points). 
+
+Screenshots are in Phase#6/UI folder. And for bonus points I want to report a statistical information that medicines are not permissible for many of Kazakhstan citizens. Because the minimum wage in Kazakhstan in 2021 is around 42500 tenge. Which is extremely small amout of money to simply survive. And because of that many of Kazakh people can not afford a particular medicine. Especially old people, they really need a medications to live a longer life but due to the absense of money they can not afford that. In 2020, we experienced a shortage of medicines during pandemics and it was not only a shortage, but also the fact that these medicines were very expensive and many simply died due to the fact that they could not buy these medicines. We took our dataset to check the prices of medicines and we can see the prices like 188000 and other extremely expensive medicines. And if we will just imagine an old men or woman that has a salary of 42500 tenge and who is very illl and needs the medicine which costs 188000. How will they afford that ?
