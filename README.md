@@ -83,11 +83,11 @@ Actually, we made those 15 questions little bit not relevant to this phase and i
 
 ## Phase 6
 
-In this phase our project needs to be completely implemented, optimized and tested. But it is not actually fully implemented. There are few things to add. But for now it is working well and it is tested for many actions and etc. We optimized our queries so that they will work as fast as possible, but because of Tomcat server and Email Sender after the purchase, it is working little bit slow.
+In this phase our project needs to be completely implemented, optimized and tested. But it is not actually fully implemented. There are few things to add. But for now it is working well and it is tested for many actions and etc. We optimized our queries so that they will work as fast as possible, but because of Tomcat server and Email Sender after the purchase, it is working little bit slow. In the future, the errors will be corrected.
 
 * Build an user-interface (web, desktop or mobile application). You may choose any programming language you feel comfortable with.
 
-In the DB 2 course, our interface was terrible to say the least(Because UI was not that important). But we redesigned it and made a very good looking and simple UI for user. You can check the screenshots of UI in the Phase#6/UI folder. We created a website using simple HTML, CSS, JS and nothing more and the Backend was implemented using Java(EE version) and the Tomcat server. 
+In the DB 2 course, our interface was terrible to say the least(Because UI was not that important). But we redesigned it and made a very good looking and simple UI for user. You can check the screenshots of UI in the Phase#6/UI folder. We created a website using simple HTML, CSS, JS and nothing more and the Backend was implemented using Java(EE version) and the Tomcat server.
 
 * Establish a connection with the created database. You may use JDBC libraries for the connection.
 
