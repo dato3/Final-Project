@@ -272,4 +272,27 @@ public class CartDAO {
             throw new MyDAOException(e);
         }
     }
+    public void BuyLogInsert(int order_num, String userName, String medName, int quantity, int tot_price) throws MyDAOException {
+    	Connection con = null;
+    	try {
+    		con = getConnection();
+    		PreparedStatement pstmt = con.prepareStatement("INSERT INTO buy_log(order_number, userName, date_bought, medicine_name, quantity_bought, tot_price) VALUES (?, ?, SYSDATE, ?, ?, ?)");
+    		pstmt.setInt(1, order_num);
+    		pstmt.setString(2, userName);
+    		pstmt.setString(3, medName);
+    		pstmt.setInt(4, quantity);
+    		pstmt.setInt(5, tot_price);
+    		ResultSet rs = pstmt.executeQuery();
+    		rs.close();
+            pstmt.close();
+            releaseConnection(con);
+    	} catch (Exception e) {
+            try {
+                if (con != null)
+                    con.close();
+            } catch (SQLException e2) { /* ignore */
+            }
+            throw new MyDAOException(e);
+        }
+    }
 }

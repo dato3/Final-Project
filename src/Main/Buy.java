@@ -49,6 +49,7 @@ public class Buy extends Action {
         	for(int t = 0;t < cart.length;t++) {
         		cartDAO.DelInsMedProcedure(cart[t].getMedicineName());
         		cartDAO.InsFeaturedProcedure(cart[t].getMedicineName(), cart[t].getQuantity());
+        		cartDAO.BuyLogInsert(Integer.parseInt(orderNum), cart[t].getUserName(), cart[t].getMedicineName(), cart[t].getQuantity(), cart[t].getTotalPrice());
         	}
 			cartDAO.deleteTable();
 			session.setAttribute("totalPrice", cartDAO.totalCalulation(user.getUserName()));

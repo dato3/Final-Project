@@ -180,14 +180,15 @@
             </div>
             <div class="footerContact">
                 <h2>CONTACT INFO</h2>
-                <p>Add: No 1104 Super Sky Tower, Los Angeles</p>
-                <p>Openning time: 8am to 10pm from Monday to Saturday</p>
-                <p>+7(000)000 00 00</p>
-                <p>support@company.com</p>
+                <p>Address: Almaty, Abay 12/1</p>
+                <p>Working hours: 8AM - 10PM</p>
+                <p>Working days: Monday - Saturday</p>
+                <p>Phone: +7(000)000 00 00</p>
+                <p>Email: support@company.com</p>
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; Copyright 2020 - Java EE Team</p>
+            <p>&copy; Copyright 2020 - PharmaDAD</p>
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
