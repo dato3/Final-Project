@@ -1,0 +1,4 @@
+SELECT COUNT(*) 
+FROM medicines;
+--|T'| = 189 rows
+--TIME FOR testQuery: 0.000592947006226 seconds

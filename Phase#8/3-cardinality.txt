@@ -1,0 +1,4 @@
+SELECT * 
+FROM cart_table;
+--|T'| = 0 rows(It is temporary table for storing some medicines)
+--TIME FOR testQuery: 0 seconds

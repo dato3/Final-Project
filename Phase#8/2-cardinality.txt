@@ -1,0 +1,4 @@
+SELECT COUNT(*)
+FROM featured_medicines;
+--|T'| = 189 rows
+--TIME FOR testQuery: 0.000555992126465 seconds

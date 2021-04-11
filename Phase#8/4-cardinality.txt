@@ -1,0 +1,4 @@
+SELECT * 
+FROM recent_medicines;
+--|T'| = 10(Always 10, cause latest rows are removed when some medicine were bought recently)
+--TIME FOR testQuery: 0.000467264829175 seconds
