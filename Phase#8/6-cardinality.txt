@@ -1,0 +1,4 @@
+SELECT COUNT(*) 
+FROM cart_table;
+--|T'| = 0 rows
+--TIME FOR testQuery: 0 seconds
