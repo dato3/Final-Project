@@ -1,0 +1,4 @@
+SELECT COUNT(*) 
+FROM news;
+--|T'| = 10 rows
+--TIME FOR testQuery: 0.000677254629468 seconds
