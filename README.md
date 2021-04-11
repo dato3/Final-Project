@@ -104,3 +104,7 @@ Screenshots are in Phase#6/UI folder. And for bonus points, I want to report sta
 ## Phase 7
 
 In this phase of our project we had to choose 7 most complex SELECT queries out of 15 queries submitted before and write their corresponding relational expressions and relation algebra trees. But the problem that we faced is, when we created 15 quetions we did not think that we have to write sql queries and their corresponding RA expressions. And because of that our sql queries are too simple and most of them are not even SELECT queries. That's why we chose the SELECT queries that we had and wrote their corresponding RA expressions. Also we had a 3 SELECT queries that used OFFSET and FETCH some FIRST ROWS ONLY expressions. We couldn't find any information regarding how to limit the number of selected rows in RA. And finally it was clear that there are no such RA operators. But we were not sure about that, and we used only one of those 3 queries in case if we did it not correctly. 
+
+## Phase 8
+
+Actually, we didn't even do 8th phase like 5th and 7th phases. Because when we created our questions we didn't expect that we are going to do such things with our queries and because of that our questions are simlpe and the queries for them are also simple. For completing this 8th phase we don't even have joins in all of 15 queris and because of that we only counted the cardinailities of 1 tables and the execution time for each of them.  
