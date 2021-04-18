@@ -108,3 +108,23 @@ In this phase of our project we had to choose 7 most complex SELECT queries out 
 ## Phase 8
 
 Actually, we didn't even do 8th phase like 5th and 7th phases. Because when we created our questions we didn't expect that we are going to do such things with our queries and because of that our questions are simlpe and the queries for them are also simple. For completing this 8th phase we don't even have joins in all of 15 queris and because of that we only counted the cardinailities of 1 tables and the execution time for each of them.  
+
+## Phase 9
+
+Since we took quite easy queries in previous phases we decided to choose different queries and little bit different functionalities. Many of them are already mentioned in 15 queries/questions in previous phases. We inserted some code in our backend to check how many miliseconds it takes for the functionality to trigger the quiey and retrieve it. And here what we got,
+
+1.Shop Now function, which returns list of all the medicines from our main dataset by clikcing on a "Shop Now" button. Average runtime is 32+9+12+6+5/5 = 12.8 ms.
+
+2.Search system, which searches for particular medicines from medicines dataset. Average runtime is 43+21+12+29+15/5 = 24 ms.
+
+3.Register function, which simply registers the user. Average runtime is 11+6+8+14+5/5 = 8.8 ms.
+
+4.Runtime of displaying the most sold medicines. Average runtime is 31+14+25+16+11/5 = 19.4 ms.
+
+5.Runtime of displaying the recently sold medicines. Average runtime is 52+20+12+17+10/5 = 22.2 ms.
+
+6.Adding a medicine into the basket. Average runtime is 12+19+10+21+13/5 = 15 ms.
+
+7.Buying the medicines from basket. Average runtime is 156+128+179+142+98/5 = 140.6 ms. The main reason why this functionality works that slow is that we have a mail sender that notifies the user that he bought the medicines and sends the order number, etc. And this mail sender is really slow for some reason. I even tried a new project with a mail sender only, but still it takes around 60-100ms to send a message. To fasten the runtime of this functionality, I even added a trigger and 2 procedures to fasten the queries but still it takes around 140 ms.
+
+For bonus points, I added a 7 screenshots in Phase#9 folder where you can see the execution plan but I couldnt change the time there to a miliseconds.
