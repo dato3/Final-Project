@@ -128,3 +128,7 @@ Since we took quite easy queries in previous phases we decided to choose differe
 7.Buying the medicines from basket. Average runtime is 156+128+179+142+98/5 = 140.6 ms. The main reason why this functionality works that slow is that we have a mail sender that notifies the user that he bought the medicines and sends the order number, etc. And this mail sender is really slow for some reason. I even tried a new project with a mail sender only, but still it takes around 60-100ms to send a message. To fasten the runtime of this functionality, I even added a trigger and 2 procedures to fasten the queries but still it takes around 140 ms.
 
 For bonus points, I added a 7 screenshots in Phase#9 folder where you can see the execution plan but I couldnt change the time there to a miliseconds.
+
+## Phase 10
+
+So in a final Phase of our Project we have to write a page long project report, which is in a Phase#10 folder. And time slot chosen for a presentation is 30 April 10AM - 10:15AM. Also we have to prepare the presentation which is also in a Phase#10 folder. The prerecorded video of our project is [here](AlmasSsylka).
