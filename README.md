@@ -131,4 +131,4 @@ For bonus points, I added a 7 screenshots in Phase#9 folder where you can see th
 
 ## Phase 10
 
-So in a final Phase of our Project we have to write a page long project report, which is in a Phase#10 folder. And time slot chosen for a presentation is 30 April 10AM - 10:15AM. Also we have to prepare the presentation which is also in a Phase#10 folder. The prerecorded video of our project is [here](AlmasSsylka).
+So in a final Phase of our Project we have to write a page long project report, which is in a Phase#10 folder. And time slot chosen for a presentation is 30 April 10AM - 10:15AM. Also we have to prepare the presentation which is also in a Phase#10 folder. The prerecorded video of our project is https://www.youtube.com/watch?v=MpFQxkonEA8 .
